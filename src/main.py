@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from src.schemas import YieldInput
-import json
+from src.model import make_prediction
+import pandas as pd
 
 
 app = FastAPI()
@@ -9,9 +10,12 @@ app = FastAPI()
 def accueil():
     return  {
         'message': 'BIENVENUE',
-        'stauts': 'Connected'
+        'status': 'Connected'
     }
 
 @app.post('/predict')
 def predict(payload: YieldInput):
-    return payload.model_dump()
+    data = payload.model_dump() 
+    df = pd.DataFrame([data])
+    prediction = make_prediction(df)
+    return {"prediction":prediction, "unit": "hg/ha"}

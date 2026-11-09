@@ -31,7 +31,7 @@ def test_prediction():
 
 
 
-def test_prediction_invalid_paylaod():
+def test_prediction_invalid_payload():
     payload = {
         "country":"Côte d'Ivoire",
         "crop": "Maize",
@@ -46,7 +46,7 @@ def test_prediction_invalid_paylaod():
 
 
 
-def test_prediction_invalid_paylaod_year():
+def test_prediction_invalid_payload_year():
     payload = {
         "country":"Côte d'Ivoire",
         "crop": "Maize",
@@ -76,7 +76,7 @@ def test_prediction_invalid_paylaod_country():
 
 
 
-def test_prediction_invalid_paylaod_missing():
+def test_prediction_invalid_payload_missing():
     payload = {
         "crop": "Maize",
         "year": 2020,
@@ -91,7 +91,7 @@ def test_prediction_invalid_paylaod_missing():
 
 
 
-def test_prediction_invalid_paylaod_added():
+def test_prediction_invalid_payload_added():
     payload = {
         "country":"Côte d'Ivoire",
         "crop": "Maize",
